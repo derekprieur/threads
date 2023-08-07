@@ -7,9 +7,10 @@ interface ProfileHeaderProps {
     username: string
     imgUrl: string
     bio: string
+    type?: 'User' | 'Community'
 }
 
-const ProfileHeader = ({ accountId, authUserId, bio, imgUrl, name, username }: ProfileHeaderProps) => {
+const ProfileHeader = ({ accountId, authUserId, bio, imgUrl, name, username, type }: ProfileHeaderProps) => {
     return (
         <div className="flex w-full flex-col justify-start">
             <div className="flex items-center justify-between">
