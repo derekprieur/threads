@@ -6,7 +6,7 @@ import * as z from 'zod'
 import { ChangeEvent, useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form'
 import { Input } from '../ui/input'
 import { userValidation } from '@/lib/validations/user'
 import { Button } from '../ui/button'
