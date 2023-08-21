@@ -10,7 +10,7 @@ interface Props {
     name: string
     username: string
     imgUrl: string
-    personType: string
+    personType?: string
 }
 
 const UserCard = ({ id, name, username, imgUrl, personType }: Props) => {
@@ -18,7 +18,7 @@ const UserCard = ({ id, name, username, imgUrl, personType }: Props) => {
     return (
         <article className="user-card">
             <div className="user-card_avatar">
-                <Image src={imgUrl} alt="logo" width={48} height={48} className="rounded-full" />
+                <Image src={imgUrl} alt="logo" width={48} height={48} className="rounded-full h-12 w-12 object-cover" />
                 <div className="flex-1 text-ellipsis">
                     <h4 className="text-base-semibold text-light-1">{name}</h4>
                     <p className="text-small-medium text-gray-1">@{username}</p>
