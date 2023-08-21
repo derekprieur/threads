@@ -16,7 +16,12 @@ const inter = Inter({
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
     return (
         <ClerkProvider appearance={
-            { baseTheme: dark }
+            {
+                baseTheme: dark,
+                variables: {
+                    colorPrimary: '#6C47FF',
+                }
+            }
         }>
             <html lang="en">
                 <body className={`bg-dark-1 ${inter.className}`}>
