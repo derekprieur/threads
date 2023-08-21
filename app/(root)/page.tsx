@@ -1,13 +1,18 @@
+import { redirect } from "next/navigation"
+import { currentUser } from "@clerk/nextjs"
+
 import ThreadCard from "@/components/cards/ThreadCard"
 import { fetchPosts } from "@/lib/actions/thread.actions"
-import { currentUser } from "@clerk/nextjs"
+import { fetchUser } from "@/lib/actions/user.actions"
 
 export default async function Home() {
   const result = await fetchPosts(1, 30)
   const user = await currentUser()
   if (!user) return null
 
-  console.log(result, "result")
+  const userInfo = await fetchUser(user.id)
+
+  if (!userInfo?.onboarded) redirect('/onboarding')
 
   return (
     <>
